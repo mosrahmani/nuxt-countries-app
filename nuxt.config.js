@@ -1,7 +1,9 @@
+require('dotenv').config()
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'countries',
+    title: process.env.APP_NAME,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,8 +34,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -42,10 +43,11 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/dotenv',
     ['cookie-universal-nuxt', {
       maxAge: 60 * 60 * 24 * 7
     }],
-
     ['nuxt-lazy-load', {
       images: true,
       directiveOnly: false
@@ -56,12 +58,12 @@ export default {
 
   axios: {
     proxy: true,
-    baseURL: 'http://api.countrylayer.com/v2/'
+    baseURL: process.env.BASE_URL
   },
 
   proxy: {
     '/api/': {
-      target: 'http://api.countrylayer.com/v2/',
+      target: process.env.BASE_URL,
       pathRewrite: { '^/api/': '' },
       changeOrigin: true
     }
@@ -72,6 +74,10 @@ export default {
     manifest: {
       lang: 'en'
     }
+  },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
   },
 
   // Tailwindcss module configuration
