@@ -7,7 +7,7 @@
 
 ## Demo
 
-You can see the demo of the website that was deployed on [Heroku](https://heroku.com) through the following link: [Website Demo](https://nuxtjs.org/docs/2.x/directory-structure/assets)
+You can see the demo of the website that was deployed on [Heroku](https://heroku.com) through the following link: [Website Demo](http://countries-rahmani.herokuapp.com)
 
 ## Running with Docker
 
@@ -16,10 +16,10 @@ You can run the project by doing the following steps using Docker
 ```bash
 # Building the Container
 $ cd
-$ docker build -t nuxtjs-tutorial .
+$ docker build -t countries .
 
 # Running the Container
-$ docker run -it -p 3000:3000 nuxtjs-tutorial
+$ docker run -it -p 3000:3000 countries
 ```
 After you run this commands, you should be able to visit http://localhost:3000 in your browser.
 
