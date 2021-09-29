@@ -40,6 +40,6 @@ export default {
 </script>
 <style lang="scss">
   .card {
-    min-height: 24rem;
+    min-height: 25rem;
   }
 </style>
