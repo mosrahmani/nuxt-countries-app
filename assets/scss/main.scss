@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+html {
+  font-size: 13px;
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  @apply bg-gray-100 text-gray-900 h-screen
+}
+
+input, select {
+  @apply bg-transparent;
+  &:focus {
+    @apply outline-none
+  }
+}
+.dark {
+  @apply bg-gray-900 text-white
+}
